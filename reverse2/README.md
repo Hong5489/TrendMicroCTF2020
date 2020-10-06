@@ -129,7 +129,7 @@ undefined8 FUN_00100f80(void)
     // If s1 and local_df88 are the same 
     if (memcmp(__s1,&local_df88,0x10) == 0) {
       // XOR the data with 1 and store in output
-      xor("7845dee1g7b14bdc12345678",0x10,1,&output);
+      xor("7845dee1g7b14bdc",0x10,1,&output);
       // Copy previous 16 bytes from current position
       __s1 = copyPrevious16Bytes(buffer,current_position);
       // If s1 and output are the same 
@@ -180,7 +180,7 @@ undefined8 FUN_00100f80(void)
 ```
 From the code above, the condition of the valid file are:
 - First 16 bytes must equal to ```7dd`8c6dg08068`1``` XOR 1
-- Last 16 bytes must equal to `7845dee1g7b14bdc12345678` XOR 1
+- Last 16 bytes must equal to `7845dee1g7b14bdc` XOR 1
 
 The challenge said that the file is corrupted, so we must correct the file for first 16 bytes and last 16 bytes
 
